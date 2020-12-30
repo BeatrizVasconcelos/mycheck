@@ -1,0 +1,32 @@
+<mat-toolbar color="secondary" class="header">
+  <span>Clientes Cadastrados:</span>
+  <span class="spacer"></span>
+
+</mat-toolbar>
+<div class="listar-clientes">
+  <mat-accordion multi="true" class="lista-clientes" *ngIf="clientes.length > 0">
+    <mat-expansion-panel *ngFor="let cliente of clientes"
+                         (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+  <mat-panel-title>
+  {{cliente.nome}}
+  </mat-panel-title>
+  <mat-panel-description>
+  Clique para ver os detalhes da visita de {{cliente.nome}}.
+  </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>Endereço: {{cliente.endereco}}</p>
+  <p>Telefone: {{cliente.telefone}}</p>
+  <p>Tipo de Cliente: {{cliente.tipoCliente}}</p>
+  <p>Preferencial: {{cliente.preferencial}}</p>
+  <mat-action-row>
+    <button mat-button color="warn" type="button" (click)="onDelete(cliente.id)">Excluir</button>
+  </mat-action-row>
+  </mat-expansion-panel>
+  </mat-accordion>
+
+
+  <p *ngIf="clientes.length <= 0">Nenhuma visita foi cadastrado até o momento.</p>
+
+  </div>

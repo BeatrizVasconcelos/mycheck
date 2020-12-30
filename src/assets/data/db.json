@@ -1,0 +1,27 @@
+{
+  "clientes": [
+    {
+      "id": "1",
+      "nome": "Julia",
+      "endereco": "Rua Cristo Redentor, 2345, Barra da Tijuca",
+      "telefone": "85996405054",
+      "pessoaContato": "Ana",
+      "telefonePessoaContato": "85998345676",
+      "tipoCliente": "Físico",
+      "preferencial": "Não",
+      "observacoes": "nao tem"
+    },
+    {
+      "id": "2",
+      "nome": "Carlos",
+      "endereco": "rua 2, 34, carlito pamplona",
+      "telefone": "85996405054",
+      "pessoaContato": "Ana",
+      "telefonePessoaContato": "85998345676",
+      "tipoCliente": "Juridico",
+      "preferencial": "Sim",
+      "observacoes": "nao tem"
+    }
+  ],
+  "visitas": []
+}

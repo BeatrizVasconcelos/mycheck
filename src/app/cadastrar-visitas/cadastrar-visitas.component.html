@@ -1,0 +1,104 @@
+<mat-toolbar color="secondary" class="header">
+  <span>Cadastro de Visita</span>
+  <span class="spacer"></span>
+
+</mat-toolbar>
+
+
+<!-- Card do formulário de cadastro de cliente. -->
+
+<mat-grid-list cols="2" rowHeight="100vh">
+
+  <mat-grid-tile>
+    <mat-card class="card-cadastro">
+      <mat-card-header>
+        <div mat-card-avatar class="header-imagem"></div>
+        <mat-card-title>Nova Visita</mat-card-title>
+        <mat-card-subtitle>Para cadastrar uma nova visita, preencha os seguintes campos:</mat-card-subtitle>
+      </mat-card-header>
+
+  <mat-card-content>
+    <div class="form-cadastro">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome do Cliente</mat-label>
+        <input matInput
+        name="nomeCliente"
+        [(ngModel)]="visita.cliente"
+        required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Data da Visita</mat-label>
+        <input matInput [matDatepicker]="picker"
+        name="dataVisita"
+        [(ngModel)]="visita.data"
+        required>
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Hora da Visita</mat-label>
+        <input matInput
+        name="horaVisita"
+        [(ngModel)]="visita.hora"
+        required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Status da Visita</mat-label>
+        <mat-select
+        name="statusVisita"
+        [(ngModel)]="visita.status"
+        required>
+          <mat-option value="Cadastrada">Cadastrada</mat-option>
+          <mat-option value="Confirmada">Confirmada</mat-option>
+          <mat-option value="Em atendimento">Em atendimento</mat-option>
+          <mat-option value="Realizada">Realizada</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Resultado da Visita</mat-label>
+        <input matInput
+        name="resultadoVisita"
+        [(ngModel)]="visita.resultado"
+        required>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  </mat-card>
+</mat-grid-tile>
+
+
+<mat-grid-tile>
+  <mat-card class="card-cadastro">
+      <mat-card-header>
+        <div mat-card-avatar class="header-imagem2"></div>
+        <mat-card-title>Observações</mat-card-title>
+        <mat-card-subtitle>Adicione aqui, caso necessário, alguma observação referente à visita do cliente.</mat-card-subtitle>
+      </mat-card-header>
+       <mat-card-content>
+      <mat-form-field appearance="fill" class="observacoes">
+        <mat-label>Observações</mat-label>
+        <textarea matInput
+        name="observacoesVisita"
+        [(ngModel)]="visita.observacoes"></textarea>
+      </mat-form-field>
+      <br>
+</mat-card-content>
+
+
+</mat-card>
+
+</mat-grid-tile>
+
+
+</mat-grid-list>
+
+<mat-card-actions class="acoes">
+  <button mat-button color="primary" class="button" type="submit" (click)="cadastrarVisita()">CADASTRAR</button>
+  <button mat-button color="warn" class="button" (click)="cancel()">CANCELAR</button>
+</mat-card-actions>

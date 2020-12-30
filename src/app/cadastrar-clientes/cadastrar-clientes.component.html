@@ -1,0 +1,125 @@
+<mat-toolbar color="secondary" class="header">
+  <span>Cadastro de Cliente</span>
+  <span class="spacer"></span>
+
+</mat-toolbar>
+
+
+<!-- Card do formulário de cadastro de cliente. -->
+
+<mat-grid-list cols="2" rowHeight="100vh">
+
+  <mat-grid-tile>
+
+
+    <mat-card class="card-cadastro">
+      <mat-card-header>
+        <div mat-card-avatar class="header-imagem"></div>
+        <mat-card-title>Novo Cliente</mat-card-title>
+        <mat-card-subtitle>Para cadastrar um novo cliente, preencha os seguintes campos:</mat-card-subtitle>
+      </mat-card-header>
+
+  <mat-card-content>
+    <div class="form-cadastro">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput
+        name="nome"
+        [(ngModel)]="cliente.nome"
+        required
+        #nome="ngModel">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Endereço</mat-label>
+        <input matInput
+        name="endereco"
+        [(ngModel)]="cliente.endereco"
+        required
+        #endereco="ngModel">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput
+        name="telefone"
+        [(ngModel)]="cliente.telefone"
+        required
+        #telefone="ngModel">
+        <mat-hint>Inclua o DDD.</mat-hint>
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo de Cliente</mat-label>
+        <mat-select
+        name="tipoCliente"
+        [(ngModel)]="cliente.tipoCliente"
+        required
+        #tipoCliente="ngModel">
+          <mat-option value="Fisico">Físico</mat-option>
+          <mat-option value="Juridico">Jurídico</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Preferencial</mat-label>
+        <mat-select
+        name="preferencial"
+        [(ngModel)]="cliente.preferencial"
+        required
+        #preferencial="ngModel">
+          <mat-option value="Sim">Sim</mat-option>
+          <mat-option value="Nao">Não</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  </mat-card>
+</mat-grid-tile>
+
+
+<mat-grid-tile>
+
+  <mat-card class="card-cadastro">
+      <mat-card-header>
+        <div mat-card-avatar class="header-imagem2"></div>
+        <mat-card-title>Pessoa de Contato</mat-card-title>
+        <mat-card-subtitle>Preencha com os dados da pessoa de contato do cliente.</mat-card-subtitle>
+      </mat-card-header>
+       <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput
+        name="nomePessoaContato"
+        [(ngModel)]="cliente.nomePessoaContato"
+        required
+        #nomePessoaContato="ngModel">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput
+        type="number"
+        name="telefonePessoaContato"
+        [(ngModel)]="cliente.telefonePessoaContato"
+        required
+        #telefonePessoaContato="ngModel">
+        <mat-hint>Inclua o DDD.</mat-hint>
+      </mat-form-field>
+      <br>
+</mat-card-content>
+
+
+</mat-card>
+
+
+</mat-grid-tile>
+
+
+</mat-grid-list>
+<mat-card-actions class="acoes">
+  <button mat-button color="primary" class="button" type="submit" (click)="cadastrarCliente()">CADASTRAR</button>
+  <button mat-button color="warn" class="button" (click)="cancel()">CANCELAR</button>
+</mat-card-actions>
+
