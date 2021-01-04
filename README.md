@@ -1,27 +1,40 @@
-# AtsApp
+# MyCheck
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+Aplicação de cadastro de clientes/visitas e listagem de clientes/visitas. 
+Este projeto foi desenvolvido com [Angular CLI](https://github.com/angular/angular-cli) versão 11.0.5.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+Para executar o projeto, será necessário instalar/usar os seguintes programas:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+* [Angular 11](https://angular.io/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* [Node.js](https://nodejs.org/en/download/)
 
-## Running end-to-end tests
+* [NPM](https://www.npmjs.com/)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* [Angular Material](https://material.angular.io/)
 
-## Further help
+* [Visual Studio Code](https://code.visualstudio.com/download)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Desenvolvimento do servidor
+
+
+* Fake API construída em JSON-Server (um pacote npm usado para criar um webservice REST JSON simulando uma API.)
+
+* Use `ng serve` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`.
+
+* Use o comando `json-server --watch src/assets/data/db.json` para rodar o servidor JSON.
+
+
+
+## Tema
+
+
+* Paleta de cores utilizada: [Deep Purple](https://www.materialui.co/colors/deep-purple)
