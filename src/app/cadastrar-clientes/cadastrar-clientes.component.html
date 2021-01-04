@@ -45,6 +45,7 @@
         name="telefone"
         [(ngModel)]="cliente.telefone"
         required
+        mask="(00) 00000-0000"
         #telefone="ngModel">
         <mat-hint>Inclua o DDD.</mat-hint>
       </mat-form-field>
@@ -100,9 +101,9 @@
       <mat-form-field appearance="fill">
         <mat-label>Telefone</mat-label>
         <input matInput
-        type="number"
         name="telefonePessoaContato"
         [(ngModel)]="cliente.telefonePessoaContato"
+        mask="(00) 00000-0000"
         required
         #telefonePessoaContato="ngModel">
         <mat-hint>Inclua o DDD.</mat-hint>

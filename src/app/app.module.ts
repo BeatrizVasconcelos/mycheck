@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -17,6 +18,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +31,10 @@ import { ListarClientesComponent } from './listar-clientes/listar-clientes.compo
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './templates/header/header.component';
 import { FooterComponent } from './templates/footer/footer.component';
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -45,6 +51,7 @@ import { FooterComponent } from './templates/footer/footer.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgxMaskModule.forRoot(maskConfig),
     AppRoutingModule,
     MatToolbarModule,
     BrowserAnimationsModule,
@@ -62,10 +69,13 @@ import { FooterComponent } from './templates/footer/footer.component';
     MatSnackBarModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatAutocompleteModule
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

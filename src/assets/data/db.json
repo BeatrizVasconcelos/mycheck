@@ -23,5 +23,15 @@
       "observacoes": "nao tem"
     }
   ],
-  "visitas": []
+  "visitas": [
+    {
+      "id": 1,
+      "cliente": "Juliana",
+      "data": "0401",
+      "hora": "1243",
+      "motivo": "",
+      "status": "Confirmada",
+      "resultado": "Ok"
+    }
+  ]
 }

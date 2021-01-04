@@ -16,8 +16,8 @@
 Clique para ver os detalhes da visita de {{visita.cliente}}.
 </mat-panel-description>
 </mat-expansion-panel-header>
-<p>Data: {{visita.data}}</p>
-<p>Hora: {{visita.hora}}</p>
+<p>Data: {{visita.data | mask: "d0/M0/0000"}}</p>
+<p>Hora: {{visita.hora | mask: "Hh:m0"}}</p>
 <p>Status: {{visita.status}}</p>
 <p>Resultado: {{visita.resultado}}</p>
 <mat-action-row>
