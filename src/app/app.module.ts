@@ -45,7 +45,7 @@ const maskConfig: Partial<IConfig> = {
     ListarClientesComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VisitaService } from '../services/visita.service';
 import { Visita } from '../models/visita.model';
+import { ClienteService } from '../services/cliente.service';
+import { Cliente } from '../models/cliente.model';
 
 @Component({
   selector: 'app-cadastrar-visitas',
@@ -10,6 +12,8 @@ import { Visita } from '../models/visita.model';
 })
 export class CadastrarVisitasComponent implements OnInit {
 
+
+  clientes: Cliente[] = [];
   visita : Visita = {
     id: '',
     cliente: '',
@@ -21,9 +25,16 @@ export class CadastrarVisitasComponent implements OnInit {
 
 }
 
-  constructor(private visitaService: VisitaService, private router: Router) { }
+  constructor(private visitaService: VisitaService, private clienteService: ClienteService,
+    private router: Router) {
+    this.clientes = [];
+    this.clienteService.read().subscribe(clientes => {
+      this.clientes = clientes;
+    });
+   }
 
   ngOnInit(): void {
+
   }
 
   cadastrarVisita(): void {
@@ -39,3 +50,6 @@ export class CadastrarVisitasComponent implements OnInit {
   }
 
 }
+
+
+
