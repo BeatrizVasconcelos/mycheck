@@ -36,11 +36,15 @@
       <br>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Data da Visita</mat-label>
-        <input matInput
+        <input matInput [matDatepicker]="picker"
         name="dataVisita"
         [(ngModel)]="visita.data"
-        mask="d0/M0/0000"
+        rInputMask="99/99/9999"
         required>
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <br>
       <mat-form-field appearance="fill">

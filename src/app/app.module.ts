@@ -19,6 +19,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { InputMaskModule } from 'racoon-mask-raw';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -70,7 +71,8 @@ const maskConfig: Partial<IConfig> = {
     MatExpansionModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    InputMaskModule
 
   ],
   providers: [],
