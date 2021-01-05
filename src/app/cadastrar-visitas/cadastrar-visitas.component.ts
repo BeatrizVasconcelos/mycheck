@@ -4,6 +4,9 @@ import { VisitaService } from '../services/visita.service';
 import { Visita } from '../models/visita.model';
 import { ClienteService } from '../services/cliente.service';
 import { Cliente } from '../models/cliente.model';
+import { DateAdapter } from '@angular/material/core';
+
+
 
 @Component({
   selector: 'app-cadastrar-visitas',
@@ -26,7 +29,8 @@ export class CadastrarVisitasComponent implements OnInit {
 }
 
   constructor(private visitaService: VisitaService, private clienteService: ClienteService,
-    private router: Router) {
+    private router: Router, private dateAdapter: DateAdapter<Date>) {
+    this.dateAdapter.setLocale('en-GB'); //dd/MM/yyyy
     this.clientes = [];
     this.clienteService.read().subscribe(clientes => {
       this.clientes = clientes;
